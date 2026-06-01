@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar'; // Controla a barra de status do celular.
+// Componente responsável por renderizar o projeto
 
-import { SafeAreaProvider } from 'react-native-safe-area-context'; // Provê contexto de área segura para toda a árvore.
-import AppNavigator from './app/navigation/AppNavigator'; // Importa o componente de navegação, que gerencia as telas do app.
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Routes from "./app/routes";
 
-export default function App() {                          // Declara e exporta o componente principal.
-  return (
-    <SafeAreaProvider>                                                                    
-      <StatusBar style="auto" />                         
-      <AppNavigator />                                  
+export default function App() {
+    return (
+    <SafeAreaProvider>
+        <Routes />
     </SafeAreaProvider>
-  );
+    );
+
 }
