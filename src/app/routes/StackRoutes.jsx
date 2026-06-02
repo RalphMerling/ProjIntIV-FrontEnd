@@ -21,5 +21,8 @@ export default function StackRoutes() {
       <Stack.Screen name="registerall" component={RegisterAll} />
       <Stack.Screen name="register" component={RegisterScreen} />
     </Stack.Navigator>
+
+    //teste de commit
+
   );
 }
