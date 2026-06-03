@@ -1,7 +1,7 @@
 //Arquivo que iremos montar as nossas rotas e configurar nossas telas
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../screens/LoginScreen";
-import RegisterAll from "../screens/RegisterAll";   
+import RegisterAll from "../screens/RegisterAll";
 import RegisterScreen from "../screens/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 // (ex: <Stack.Navigator initialRouteName="register">)
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="register">
+    <Stack.Navigator initialRouteName="login">
       <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="registerall" component={RegisterAll} />
       <Stack.Screen name="register" component={RegisterScreen} />
