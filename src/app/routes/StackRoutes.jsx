@@ -14,10 +14,14 @@ const Stack = createNativeStackNavigator();
 // Mas também pode definir a rota inicial independente da ordem,
 // usando a propriedade initialRouteName no Stack.Navigator 
 // (ex: <Stack.Navigator initialRouteName="register">)
+
+//O headerShown: false no Stack.Screen retira o header da página. 
+//No Stack.Navigator retira de todas as páginas
+
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="login">
-      <Stack.Screen name="login" component={LoginScreen} />
+    <Stack.Navigator initialRouteName="registerall" screenOptions={{ headerShown: false}}>
+      <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false}} /> 
       <Stack.Screen name="registerall" component={RegisterAll} />
       <Stack.Screen name="register" component={RegisterScreen} />
     </Stack.Navigator>
