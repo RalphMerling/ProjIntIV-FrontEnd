@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
 
 const guides = [
   {
@@ -117,9 +118,25 @@ export default function GuidesScreen() {
         </View>
       </ScrollView>
 
+
+       {/* FOOTER */}
       <View style={styles.footer}>
-        <Text style={styles.footerText}>completar depois</Text>
+        <View style={styles.footerLogoContainer}>
+          <Text style={styles.footerLogo}>LT</Text>
+        </View>
+
+        <Text style={styles.footerText}>
+          Muito Além do Turismo
+        </Text>
+
+        <View style={styles.footerIcons}>
+          <Ionicons name="logo-whatsapp" size={18} color="#D4AF37" />
+          <Ionicons name="logo-instagram" size={18} color="#D4AF37" />
+          <Ionicons name="mail-outline" size={18} color="#D4AF37" />
+          <Ionicons name="compass-outline" size={18} color="#D4AF37" />
+        </View>
       </View>
+
     </SafeAreaView>
   );
 }
@@ -218,7 +235,7 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 22,
+    fontSize: 21,
     fontWeight: "700",
     color: "#232323",
   },
@@ -304,16 +321,39 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 
-  footer: {
-    height: 50,
-    backgroundColor: "#031A35",
+    footer: {
+    height: 55,
+    backgroundColor: "#041C32",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 14,
+  },
+
+  footerLogoContainer: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: "#D4AF37",
     justifyContent: "center",
     alignItems: "center",
   },
 
+  footerLogo: {
+    color: "#D4AF37",
+    fontSize: 11,
+    fontWeight: "bold",
+  },
+
   footerText: {
-    color: "#FFF",
-    fontSize: 18,
-    fontWeight: "700",
+    color: "#D4AF37",
+    fontSize: 12,
+    fontStyle: "italic",
+  },
+
+  footerIcons: {
+    flexDirection: "row",
+    gap: 10,
   },
 });
