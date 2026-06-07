@@ -53,7 +53,7 @@ export default function RegioesScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.logo}>Luxury Tour</Text>
+        <Text style={styles.logo}>Luxury Tours</Text>
         <Text style={styles.slogan}>Muito Além do Turismo</Text>
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backText}>Voltar</Text>
@@ -81,16 +81,40 @@ export default function RegioesScreen({ navigation }) {
       </ScrollView>
 
       {/* Footer */}
-      <View style={styles.footer}>
+
+      {/* <View style={styles.footer}>
         <Text style={styles.footerLogo}>Luxury Tour</Text>
         <Text style={styles.footerText}>Muito Além do Turismo</Text>
+
+        
         <View style={styles.footerIcons}>
-          <Ionicons name="logo-whatsapp" size={18} color="#D4AF37" />
-          <Ionicons name="logo-instagram" size={18} color="#D4AF37" />
-          <Ionicons name="mail-outline" size={18} color="#D4AF37" />
-          <Ionicons name="compass-outline" size={18} color="#D4AF37" />
+          <Ionicons name="logo-whatsapp" size={14} color="#EDB63E" />
+          <Ionicons name="mail-outline" size={14} color="#EDB63E" />
+          <Ionicons name="logo-instagram" size={14} color="#EDB63E" />
+          <Ionicons name="logo-facebook" size={14} color="#EDB63E" />
+        </View>
+      </View> */}
+
+      <View style={styles.footer}>
+        <View style={styles.footerSection}>
+          <Image
+            source={require("../assets/images/Logo-footer.png")}
+            style={styles.footerLogo}
+            resizeMode="contain"
+          />
+        </View>
+        <View style={styles.footerSection}>
+          <Text style={styles.footerText}>Muito Além do Turismo</Text>
+        </View>
+        <View style={styles.footerIcons}>
+          <Ionicons name="logo-whatsapp" size={14} color="#EDB63E" />
+          <Ionicons name="mail-outline" size={14} color="#EDB63E" />
+          <Ionicons name="logo-instagram" size={14} color="#EDB63E" />
+          <Ionicons name="logo-facebook" size={14} color="#EDB63E" />
         </View>
       </View>
+
+
     </SafeAreaView>
   );
 }
@@ -105,13 +129,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 12,
   },
-  logo: { color: "#D4AF37", fontWeight: "bold", fontSize: 16 },
-  slogan: { color: "#D4AF37", fontSize: 13, fontStyle: "italic" },
+  logo: { color: "#EDB63E", fontWeight: "bold", fontSize: 16 },
+  slogan: { color: "#EDB63E", fontSize: 13, fontStyle: "italic" },
   backButton: {
     backgroundColor: "#0A7EA4",
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 14,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderRadius: 10,
   },
   backText: { color: "#FFF", fontSize: 12, fontWeight: "600" },
   card: {
@@ -134,15 +158,38 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   exploreText: { color: "#FFF", fontWeight: "600" },
+
   footer: {
-    height: 55,
+    height: 40,
     backgroundColor: "#041C32",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 14,
+    paddingHorizontal: 15,
   },
-  footerLogo: { color: "#D4AF37", fontSize: 13, fontWeight: "bold" },
-  footerText: { color: "#D4AF37", fontSize: 12, fontStyle: "italic" },
-  footerIcons: { flexDirection: "row", gap: 10 },
+
+  footerSection: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  footerLogo: {
+    width: 150,
+    height: 100,
+    marginTop: 10,
+  },
+
+  footerText: {
+    color: "#EDB63E",
+    fontStyle: "italic",
+    fontSize: 12,
+  },
+
+  footerIcons: {
+    flexDirection: "row",
+    gap: 10,
+    marginLeft: 40,
+    marginRight: 20,
+  },
+
 });

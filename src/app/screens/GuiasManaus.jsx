@@ -29,8 +29,8 @@ const guides = [
     name: "Marina Silva",
     price: "R$ 360/dia",
     rating: "4.8",
-    reviews: "98 avaliações",
-    experience: "7 anos de experiência",
+    reviews: "127 avaliações",
+    experience: "8 anos de experiência",
     description:
       "Historiadora apaixonada por Manaus, especialista no período áureo da borracha e na arquitetura belle époque.",
     image: require("../assets/images/Marina.png"),
@@ -87,18 +87,19 @@ function GuideCard({ guide }) {
   );
 }
 
-export default function GuidesScreen() {
+export default function GuiasManausScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* HEADER */}
         <View style={styles.header}>
           <View style={styles.logoContainer}>
-            <Text style={styles.logoText}>LT</Text>
+            <Image
+              source={require("../assets/images/logo.png")}
+              style={styles.logo}
+              resizeMode="contain"          />
           </View>
-
           <Text style={styles.slogan}>Muito Além do Turismo</Text>
-
           <TouchableOpacity style={styles.backButton}>
             <Text style={styles.backText}>Voltar</Text>
           </TouchableOpacity>
@@ -120,22 +121,25 @@ export default function GuidesScreen() {
 
 
        {/* FOOTER */}
-      <View style={styles.footer}>
-        <View style={styles.footerLogoContainer}>
-          <Text style={styles.footerLogo}>LT</Text>
+       <View style={styles.footer}>
+        <View style={styles.footerSection}>
+          <Image
+            source={require("../assets/images/Logo-footer.png")}
+            style={styles.footerLogo}
+            resizeMode="contain"
+          />
         </View>
-
-        <Text style={styles.footerText}>
-          Muito Além do Turismo
-        </Text>
-
+        <View style={styles.footerSection}>
+          <Text style={styles.footerText}>Muito Além do Turismo</Text>
+        </View>
         <View style={styles.footerIcons}>
-          <Ionicons name="logo-whatsapp" size={18} color="#D4AF37" />
-          <Ionicons name="logo-instagram" size={18} color="#D4AF37" />
-          <Ionicons name="mail-outline" size={18} color="#D4AF37" />
-          <Ionicons name="compass-outline" size={18} color="#D4AF37" />
+          <Ionicons name="logo-whatsapp" size={14} color="#EDB63E" />
+          <Ionicons name="mail-outline" size={14} color="#EDB63E" />
+          <Ionicons name="logo-instagram" size={14} color="#EDB63E" />
+          <Ionicons name="logo-facebook" size={14} color="#EDB63E" />
         </View>
       </View>
+
 
     </SafeAreaView>
   );
@@ -148,48 +152,46 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    backgroundColor: "#031A35",
     height: 70,
+    backgroundColor: "#041C32",
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
+    paddingHorizontal: 15,
     justifyContent: "space-between",
-  },
+  }, 
 
   logoContainer: {
-    width: 42,
-    height: 42,
-    borderRadius: 21,
-    backgroundColor: "#000",
+    width: 60,
+    height: 60,
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#D4AF37",
   },
 
-  logoText: {
-    color: "#D4AF37",
-    fontWeight: "bold",
+  logo: {
+    width: 55,
+    height: 55,
   },
 
   slogan: {
-    color: "#D4AF37",
+    color: "#EDB63E",
     fontStyle: "italic",
-    fontSize: 22,
+    fontSize: 20,
+    marginLeft: 50,
   },
+
 
   backButton: {
     backgroundColor: "#14C2E5",
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderRadius: 10,
+    marginLeft: 30,
   },
 
   backText: {
     color: "#FFF",
-    fontWeight: "600",
+    fontWeight: "400",
   },
-
   content: {
     padding: 16,
   },
@@ -322,38 +324,36 @@ const styles = StyleSheet.create({
   },
 
     footer: {
-    height: 55,
+    height: 40,
     backgroundColor: "#041C32",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 14,
+    paddingHorizontal: 15,
   },
 
-  footerLogoContainer: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: "#D4AF37",
+  footerSection: {
     justifyContent: "center",
     alignItems: "center",
   },
 
   footerLogo: {
-    color: "#D4AF37",
-    fontSize: 11,
-    fontWeight: "bold",
+    width: 150,
+    height: 100,
+    marginTop: 10,
   },
 
   footerText: {
-    color: "#D4AF37",
-    fontSize: 12,
+    color: "#EDB63E",
     fontStyle: "italic",
+    fontSize: 12,
   },
 
   footerIcons: {
     flexDirection: "row",
     gap: 10,
+    marginLeft: 40,
+    marginRight: 20,
   },
+
 });

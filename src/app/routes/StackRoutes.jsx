@@ -1,8 +1,9 @@
 //Arquivo que iremos montar as nossas rotas e configurar nossas telas
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "../screens/LoginScreen";
-import RegisterAll from "../screens/RegisterAll";
-import RegisterScreen from "../screens/RegisterScreen";
+import Login from "../screens/Login";
+import CadastroUsuario from "../screens/CadastroUsuario";
+import CadastroGuia from "../screens/CadastroGuia";
+import Senha from "../screens/Senha";
 import GuiasManaus from "../screens/GuiasManaus";
 import GuiasBelem from "../screens/GuiasBelem";
 import GuiasSalvador from "../screens/GuiasSalvador";
@@ -22,6 +23,7 @@ import Regioes from "../screens/Regioes";
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 // A ordem das telas vai ser a ordem que elas vão aparecer, ou seja,
@@ -37,10 +39,11 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="regiaosul" screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="login" component={LoginScreen} />
-      <Stack.Screen name="register" component={RegisterScreen} />
-      <Stack.Screen name="registerall" component={RegisterAll} />
+    <Stack.Navigator initialRouteName="regiaonorte" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="login" component={Login} />
+      <Stack.Screen name="cadastroususario" component={CadastroUsuario} />
+      <Stack.Screen name="cadastroguia" component={CadastroGuia} />
+      <Stack.Screen name="senha" component={Senha} />
       <Stack.Screen name="regioes" component={Regioes} />
       <Stack.Screen name="regiaonorte" component={RegiaoNorte} />
       <Stack.Screen name="regiaonordeste" component={RegiaoNordeste} />
