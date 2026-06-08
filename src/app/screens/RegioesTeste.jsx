@@ -59,7 +59,7 @@ export default function RegioesScreen({ navigation }) {
             style={styles.logo}
             resizeMode="contain"          />
         </View>
-        <Text style={styles.slogan}>Muito Além do Turismo</Text>
+        <Text style={styles.slogan}>Regiões TESTE</Text>
         <TouchableOpacity style={styles.backButton}>
           <Text style={styles.backText}>Voltar</Text>
         </TouchableOpacity>
