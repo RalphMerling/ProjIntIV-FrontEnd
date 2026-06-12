@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Linking
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,6 +15,7 @@ const guides = [
   {
     id: 1,
     name: "Gustavo Klein",
+    phone: "9999999",
     price: "R$ 450/dia",
     rating: "4.9",
     reviews: "156 avaliações",
@@ -27,6 +29,7 @@ const guides = [
   {
     id: 2,
     name: "Renata Hoffmann",
+    phone: "9999999",
     price: "R$ 420/dia",
     rating: "4.8",
     reviews: "138 avaliações",
@@ -39,7 +42,65 @@ const guides = [
   },
 ];
 
+// function GuideCard({ guide }) {
+//   return (
+//     <View style={styles.card}>
+//       <View style={styles.cardHeader}>
+//         <Image source={guide.image} style={styles.avatar} />
+
+//         <View style={styles.info}>
+//           <Text style={styles.name}>{guide.name}</Text>
+
+//           <Text style={styles.rating}>
+//             ⭐ {guide.rating} ({guide.reviews})
+//           </Text>
+
+//           <Text style={styles.experience}>📍 {guide.experience}</Text>
+//         </View>
+
+//         <Text style={styles.price}>{guide.price}</Text>
+//       </View>
+
+//       <Text style={styles.description}>{guide.description}</Text>
+
+//       <Text style={styles.sectionTitle}>Idiomas</Text>
+
+//       <View style={styles.tagContainer}>
+//         {guide.languages.map((language, index) => (
+//           <View key={index} style={styles.languageTag}>
+//             <Text style={styles.languageText}>{language}</Text>
+//           </View>
+//         ))}
+//       </View>
+
+//       <Text style={styles.sectionTitle}>Especialidades</Text>
+
+//       <View style={styles.tagContainer}>
+//         {guide.specialties.map((item, index) => (
+//           <View key={index} style={styles.specialtyTag}>
+//             <Text style={styles.specialtyText}>{item}</Text>
+//           </View>
+//         ))}
+//       </View>
+
+//       <TouchableOpacity style={styles.button}>
+//         <Text style={styles.buttonText}>Selecionar guia</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// }
+
 function GuideCard({ guide }) {
+  const abrirWhatsapp = () => {
+    const mensagem = `Olá ${guide.name}, encontrei seu perfil no aplicativo Muito Além do Turismo e gostaria de contratar seus serviços como guia turístico.`;
+
+    const url = `https://wa.me/${guide.phone}?text=${encodeURIComponent(
+      mensagem
+    )}`;
+
+    Linking.openURL(url);
+  };
+
   return (
     <View style={styles.card}>
       <View style={styles.cardHeader}>
@@ -52,20 +113,26 @@ function GuideCard({ guide }) {
             ⭐ {guide.rating} ({guide.reviews})
           </Text>
 
-          <Text style={styles.experience}>📍 {guide.experience}</Text>
+          <Text style={styles.experience}>
+            📍 {guide.experience}
+          </Text>
         </View>
 
         <Text style={styles.price}>{guide.price}</Text>
       </View>
 
-      <Text style={styles.description}>{guide.description}</Text>
+      <Text style={styles.description}>
+        {guide.description}
+      </Text>
 
       <Text style={styles.sectionTitle}>Idiomas</Text>
 
       <View style={styles.tagContainer}>
         {guide.languages.map((language, index) => (
           <View key={index} style={styles.languageTag}>
-            <Text style={styles.languageText}>{language}</Text>
+            <Text style={styles.languageText}>
+              {language}
+            </Text>
           </View>
         ))}
       </View>
@@ -75,35 +142,48 @@ function GuideCard({ guide }) {
       <View style={styles.tagContainer}>
         {guide.specialties.map((item, index) => (
           <View key={index} style={styles.specialtyTag}>
-            <Text style={styles.specialtyText}>{item}</Text>
+            <Text style={styles.specialtyText}>
+              {item}
+            </Text>
           </View>
         ))}
       </View>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Selecionar guia</Text>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={abrirWhatsapp}
+      >
+        <Text style={styles.buttonText}>
+          Selecionar guia
+        </Text>
       </TouchableOpacity>
     </View>
   );
 }
 
-export default function GuiasGramadoScreen() {
+export default function GuiasGramadoScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* HEADER */}
         <View style={styles.header}>
-                  <View style={styles.logoContainer}>
-                    <Image
-                      source={require("../assets/images/logo.png")}
-                      style={styles.logo}
-                      resizeMode="contain"          />
-                  </View>
-                  <Text style={styles.slogan}>Muito Além do Turismo</Text>
-                  <TouchableOpacity style={styles.backButton}>
-                    <Text style={styles.backText}>Voltar</Text>
-                  </TouchableOpacity>
-                </View>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require("../assets/images/logo.png")}
+            style={styles.logo}
+            resizeMode="contain"          />
+        </View>                  
+        <Text style={styles.slogan}>Muito Além do Turismo</Text>
+
+        <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.backText}>Voltar</Text>
+      </TouchableOpacity>
+
+
+      </View>
 
         {/* TÍTULO */}
         <View style={styles.content}>

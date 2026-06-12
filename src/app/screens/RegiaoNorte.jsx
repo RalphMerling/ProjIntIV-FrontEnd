@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
+
 
 export default function RegiaoNorteScreen({ navigation }) {
   const destinations = [
@@ -43,12 +43,18 @@ export default function RegiaoNorteScreen({ navigation }) {
           <Image
             source={require("../assets/images/logo.png")}
             style={styles.logo}
-            resizeMode="contain"          />
+            resizeMode="contain"
+          />
         </View>
         <Text style={styles.slogan}>Muito Além do Turismo</Text>
-        <TouchableOpacity style={styles.backButton}>
+        
+        <TouchableOpacity style={styles.backButton}
+        onPress={() => navigation.goBack()} //ALTERAÇÃO
+        >
           <Text style={styles.backText}>Voltar</Text>
         </TouchableOpacity>
+
+        
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -62,10 +68,7 @@ export default function RegiaoNorteScreen({ navigation }) {
         {destinations.map((item) => (
           <View key={item.id} style={styles.card}>
             <View>
-              <Image
-                source={ item.image }
-                style={styles.cardImage}
-              />
+              <Image source={item.image} style={styles.cardImage} />
 
               <View style={styles.ratingBadge}>
                 <Ionicons name="star" size={12} color="#F5B400" />
@@ -80,37 +83,26 @@ export default function RegiaoNorteScreen({ navigation }) {
             <View style={styles.cardContent}>
               <Text style={styles.city}>{item.city}</Text>
 
-              <Text style={styles.description}>
-                {item.description}
-              </Text>
+              <Text style={styles.description}>{item.description}</Text>
             </View>
 
             <View style={styles.cardFooter}>
               <View style={styles.guideInfo}>
-                <Ionicons
-                  name="person-outline"
-                  size={16}
-                  color="#7B8794"
-                />
+                <Ionicons name="person-outline" size={16} color="#7B8794" />
                 <Text style={styles.guideText}>{item.guides}</Text>
               </View>
-
 
               <TouchableOpacity
                 onPress={() => {
                   if (item.city === "Manaus") {
-                    navigation.navigate("/screens/GuiasManaus");
+                    navigation.navigate("guiasmanaus"); //ALTERAÇÃO
                   } else if (item.city === "Belém") {
-                    navigation.navigate("/screens/GuiasBelem");
+                    navigation.navigate("guiasbelem"); //ALTERAÇÃO
                   }
                 }}
               >
-                <Text style={styles.viewGuides}>
-                  Ver guias {"  >"}
-                </Text>
+                <Text style={styles.viewGuides}>Ver guias {"  >"}</Text>
               </TouchableOpacity>
-
-              
             </View>
           </View>
         ))}
@@ -135,7 +127,6 @@ export default function RegiaoNorteScreen({ navigation }) {
           <Ionicons name="logo-facebook" size={14} color="#EDB63E" />
         </View>
       </View>
-
     </SafeAreaView>
   );
 }
@@ -153,7 +144,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 15,
     justifyContent: "space-between",
-  }, 
+  },
 
   logoContainer: {
     width: 60,
@@ -173,7 +164,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 50,
   },
-
 
   backButton: {
     backgroundColor: "#14C2E5",
@@ -332,5 +322,4 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 20,
   },
-
 });

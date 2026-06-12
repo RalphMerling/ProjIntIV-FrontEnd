@@ -10,7 +10,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function RegiaoCentroOesteScreen() {
+export default function RegiaoCentroOesteScreen({ navigation }) {
   const destinations = [
     {
       id: 1,
@@ -45,9 +45,14 @@ export default function RegiaoCentroOesteScreen() {
             resizeMode="contain"          />
         </View>
         <Text style={styles.slogan}>Muito Além do Turismo</Text>
-        <TouchableOpacity style={styles.backButton}>
+        
+        <TouchableOpacity style={styles.backButton}
+        onPress={() => navigation.goBack()} //ALTERAÇÃO
+        >
           <Text style={styles.backText}>Voltar</Text>
         </TouchableOpacity>
+
+
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -94,11 +99,20 @@ export default function RegiaoCentroOesteScreen() {
                 <Text style={styles.guideText}>{item.guides}</Text>
               </View>
 
-              <TouchableOpacity>
-                <Text style={styles.viewGuides}>
-                  Ver guias {"  >"}
-                </Text>
-              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() => {
+                if (item.city === "Brasilia") {
+                  navigation.navigate("guiasbrasilia"); //ALTERAÇÃO
+                } else if (item.city === "Chapada dos Guimarães") {
+                  navigation.navigate("guiaschapada"); //ALTERAÇÃO
+                }
+              }}
+            >
+              <Text style={styles.viewGuides}>Ver guias {"  >"}</Text>
+            </TouchableOpacity>
+
+
+
             </View>
           </View>
         ))}

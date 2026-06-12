@@ -20,9 +20,6 @@ import RegiaoCentroOeste from "../screens/RegiaoCentroOeste";
 import RegiaoSudeste from "../screens/RegiaoSudeste";
 import RegiaoSul from "../screens/RegiaoSul";
 import Regioes from "../screens/Regioes";
-import RegioesTeste from "../screens/RegioesTeste";
-import RegiaoNorteTeste from "../screens/RegiaoNorteTeste";
-import GuiasManausTeste from "../screens/GuiasManausTeste";
 
 
 
@@ -43,7 +40,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="regiaonorteteste" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="guiassaopaulo" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="cadastroususario" component={CadastroUsuario} />
       <Stack.Screen name="cadastroguia" component={CadastroGuia} />
@@ -64,9 +61,6 @@ export default function StackRoutes() {
       <Stack.Screen name="guiassaopaulo" component={GuiasSaoPaulo} />
       <Stack.Screen name="guiasgramado" component={GuiasGramado} />
       <Stack.Screen name="guiasflorianopolis" component={GuiasFlorianopolis} />
-      <Stack.Screen name="regioesteste" component={RegioesTeste} />
-      <Stack.Screen name="regiaonorteteste" component={RegiaoNorteTeste} />
-      <Stack.Screen name="guiasmanausteste" component={GuiasManausTeste} />
     </Stack.Navigator>
   );
 }

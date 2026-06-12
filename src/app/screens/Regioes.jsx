@@ -77,7 +77,7 @@ export default function RegioesScreen({ navigation }) {
 
             <TouchableOpacity
               style={styles.exploreButton}
-              onPress={() => navigation.navigate(item.screen)}
+              onPress={() => navigation.navigate("regiaonorteteste")} //ALTERAÇÃO
             >
               <Text style={styles.exploreText}>Explorar</Text>
               
