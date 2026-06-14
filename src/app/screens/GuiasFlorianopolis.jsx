@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import BackButton from "../components/BackButton";
 
 const guides = [
   {
@@ -41,54 +42,6 @@ const guides = [
     specialties: ["Ecoturismo", "Passeios Privados", "Gastronomia Local"],
   },
 ];
-
-// function GuideCard({ guide }) {
-//   return (
-//     <View style={styles.card}>
-//       <View style={styles.cardHeader}>
-//         <Image source={guide.image} style={styles.avatar} />
-
-//         <View style={styles.info}>
-//           <Text style={styles.name}>{guide.name}</Text>
-
-//           <Text style={styles.rating}>
-//             ⭐ {guide.rating} ({guide.reviews})
-//           </Text>
-
-//           <Text style={styles.experience}>📍 {guide.experience}</Text>
-//         </View>
-
-//         <Text style={styles.price}>{guide.price}</Text>
-//       </View>
-
-//       <Text style={styles.description}>{guide.description}</Text>
-
-//       <Text style={styles.sectionTitle}>Idiomas</Text>
-
-//       <View style={styles.tagContainer}>
-//         {guide.languages.map((language, index) => (
-//           <View key={index} style={styles.languageTag}>
-//             <Text style={styles.languageText}>{language}</Text>
-//           </View>
-//         ))}
-//       </View>
-
-//       <Text style={styles.sectionTitle}>Especialidades</Text>
-
-//       <View style={styles.tagContainer}>
-//         {guide.specialties.map((item, index) => (
-//           <View key={index} style={styles.specialtyTag}>
-//             <Text style={styles.specialtyText}>{item}</Text>
-//           </View>
-//         ))}
-//       </View>
-
-//       <TouchableOpacity style={styles.button}>
-//         <Text style={styles.buttonText}>Selecionar guia</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
 
 function GuideCard({ guide }) {
   const abrirWhatsapp = () => {
@@ -175,14 +128,7 @@ export default function GuiasFlorianopolisScreen({ navigation }) {
               resizeMode="contain"          />
           </View>
           <Text style={styles.slogan}>Muito Além do Turismo</Text>
-
-          <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.goBack()}
-        >
-          <Text style={styles.backText}>Voltar</Text>
-        </TouchableOpacity>
-
+          <BackButton navigation={navigation} />
         </View>
 
 

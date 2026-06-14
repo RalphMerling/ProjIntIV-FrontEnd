@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import BackButton from "../components/BackButton";
 
 export default function RegiaoNordesteScreen({ navigation }) {
   const destinations = [
@@ -45,13 +46,7 @@ export default function RegiaoNordesteScreen({ navigation }) {
             resizeMode="contain"          />
         </View>
         <Text style={styles.slogan}>Muito Além do Turismo</Text>
-
-        <TouchableOpacity style={styles.backButton} //ALTERAÇÃO
-        onPress={() => navigation.goBack()} 
-        >
-          <Text style={styles.backText}>Voltar</Text>
-        </TouchableOpacity>
-        
+        <BackButton navigation={navigation} />        
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>

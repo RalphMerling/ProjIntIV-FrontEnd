@@ -40,7 +40,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName="guiassaopaulo" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="login" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="cadastroususario" component={CadastroUsuario} />
       <Stack.Screen name="cadastroguia" component={CadastroGuia} />

@@ -9,8 +9,12 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import LabeledInput from "../components/LabeledInput";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -52,6 +56,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <View style={styles.registerContainer}>
+
           <Text style={styles.text}>
             Ainda não tem conta?{" "}
             <Text style={styles.highlight1}>Faça seu cadastro!</Text>
@@ -61,7 +66,12 @@ export default function LoginScreen() {
             É guia de turismo?{" "}
             <Text style={styles.highlight2}>Clique aqui!</Text>
           </Text>
+
         </View>
+
+        
+
+
       </View>
 
       {/* Footer */}

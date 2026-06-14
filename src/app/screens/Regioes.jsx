@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import BackButton from "../components/BackButton";
 
 export default function RegioesScreen({ navigation }) {
   const regioes = [
@@ -17,35 +18,41 @@ export default function RegioesScreen({ navigation }) {
       nome: "Região Norte",
       descricao: "Floresta Amazônica, rios majestosos e biodiversidade única.",
       image: require("../assets/images/Norte.png"),
-      screen: "/screens/RegiaoNorte",
+      // screen: "/screens/RegiaoNorte",
+      screen: "regiaonorte",
+      
     },
     {
       id: 2,
       nome: "Região Nordeste",
       descricao: "Praias paradisíacas, cultura rica e culinária incrível.",
       image: require("../assets/images/Nordeste.png"),
-      screen: "/screens/RegiaoNordeste",
+      // screen: "/screens/RegiaoNordeste",
+      screen: "regiaonordeste",
     },
     {
       id: 3,
       nome: "Região Centro-Oeste",
       descricao: "Pantanal, Chapada dos Veadeiros e natureza exuberante.",
       image: require("../assets/images/Centro oeste.png"),
-      screen: "/screens/RegiaoCentroOeste",
+      // screen: "/screens/RegiaoCentroOeste",
+      screen: "regiaocentrooeste",
     },
     {
       id: 4,
       nome: "Região Sudeste",
       descricao: "Praias, montanhas, cidades históricas e metrópoles vibrantes.",
       image: require("../assets/images/Sudeste.png"),
-      screen: "/screens/RegiaoSudeste",
+      // screen: "/screens/RegiaoSudeste",
+      screen: "regiaosudeste",
     },
     {
       id: 5,
       nome: "Região Sul",
       descricao: "Cataratas, Serra Gaúcha, vinícolas e cultura europeia.",
       image: require("../assets/images/Sul.png"),
-      screen: "/screens/RegiaoSul",
+      // screen: "/screens/RegiaoSul",
+      screen: "regiaosul",
     },
   ];
 
@@ -60,9 +67,7 @@ export default function RegioesScreen({ navigation }) {
             resizeMode="contain"          />
         </View>
         <Text style={styles.slogan}>Muito Além do Turismo</Text>
-        <TouchableOpacity style={styles.backButton}>
-          <Text style={styles.backText}>Voltar</Text>
-        </TouchableOpacity>
+        <BackButton navigation={navigation} />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -77,7 +82,7 @@ export default function RegioesScreen({ navigation }) {
 
             <TouchableOpacity
               style={styles.exploreButton}
-              onPress={() => navigation.navigate("regiaonorteteste")} //ALTERAÇÃO
+              onPress={() => navigation.navigate(item.screen)} //ALTERAÇÃO
             >
               <Text style={styles.exploreText}>Explorar</Text>
               

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import BackButton from "../components/BackButton";
 
 const guides = [
   {
@@ -124,16 +125,9 @@ export default function GuiasChapadaScreen({ navigation }) {
               source={require("../assets/images/logo.png")}
               style={styles.logo}
               resizeMode="contain"          />
-          </View>
+        </View>
           <Text style={styles.slogan}>Muito Além do Turismo</Text>
-
-          <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.goBack()}
-        >
-          <Text style={styles.backText}>Voltar</Text>
-        </TouchableOpacity>
-
+          <BackButton navigation={navigation} />
         </View>
 
         {/* TÍTULO */}
