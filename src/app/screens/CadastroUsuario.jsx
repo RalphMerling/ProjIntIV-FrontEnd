@@ -9,8 +9,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CadastroUsuario() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -67,7 +69,11 @@ export default function CadastroUsuario() {
           style={styles.input}
         />
 
-        <TouchableOpacity style={styles.button}>
+        {/* <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Avançar</Text>
+        </TouchableOpacity> */}
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("login")}>
           <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
 

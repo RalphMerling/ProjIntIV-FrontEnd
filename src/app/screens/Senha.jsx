@@ -9,8 +9,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SenhaScreen() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -28,14 +30,14 @@ export default function SenhaScreen() {
       <View style={styles.content}>
         <Text style={styles.title}>Cadastre nova senha</Text>
 
-        <Text style={styles.label}>Email</Text>
+        <Text style={styles.label}>Nova senha</Text>
         <TextInput
-          placeholder="Insira seu endereço de email"
+          placeholder="Insira sua senha"
           placeholderTextColor="#999"
           style={styles.input}
         />
 
-        <Text style={styles.label}>Senha</Text>
+        <Text style={styles.label}>Confirme a nova Senha</Text>
         <TextInput
           placeholder="Insira sua senha"
           placeholderTextColor="#999"
@@ -43,10 +45,14 @@ export default function SenhaScreen() {
           style={styles.input}
         />
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("login")}>
+          <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
-      </View>
+
+        </View> 
+            
+      
 
       {/* Footer */}
       <View style={styles.footer}>

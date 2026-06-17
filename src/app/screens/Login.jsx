@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  linking,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
@@ -51,25 +52,28 @@ export default function LoginScreen() {
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("senha")}>
           <Text style={styles.link}>Esqueceu sua senha?</Text>
         </TouchableOpacity>
 
         <View style={styles.registerContainer}>
 
+
+          <TouchableOpacity onPress={() => navigation.navigate("cadastroususario")}>
           <Text style={styles.text}>
             Ainda não tem conta?{" "}
-            <Text style={styles.highlight1}>Faça seu cadastro!</Text>
+            <Text style={styles.link}>Faça seu cadastro!</Text>
           </Text>
+          </TouchableOpacity>
 
-          <Text style={styles.text}>
+          <TouchableOpacity onPress={() => navigation.navigate("cadastroguia")}>
+            <Text style={styles.text}>
             É guia de turismo?{" "}
-            <Text style={styles.highlight2}>Clique aqui!</Text>
-          </Text>
+            <Text style={styles.link}>Clique aqui!</Text>
+            </Text>
+          </TouchableOpacity>
 
         </View>
-
-        
 
 
       </View>
@@ -181,7 +185,7 @@ const styles = StyleSheet.create({
 
   link: {
     textAlign: "center",
-    color: "#0A3A66",
+    color: "#051E35",
     marginTop: 12,
     textDecorationLine: "underline",
   },
