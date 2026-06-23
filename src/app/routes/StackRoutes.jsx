@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "../screens/Login";
 import CadastroUsuario from "../screens/CadastroUsuario";
 import CadastroGuia from "../screens/CadastroGuia";
+import CadastroGuia2 from "../screens/CadastroGuia2";
+import CadastroGuia3 from "../screens/CadastroGuia3";
 import Senha from "../screens/Senha";
 import GuiasManaus from "../screens/GuiasManaus";
 import GuiasBelem from "../screens/GuiasBelem";
@@ -44,6 +46,8 @@ export default function StackRoutes() {
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="cadastroususario" component={CadastroUsuario} />
       <Stack.Screen name="cadastroguia" component={CadastroGuia} />
+      <Stack.Screen name="cadastroguia2" component={CadastroGuia2} />
+      <Stack.Screen name="cadastroguia3" component={CadastroGuia3} />
       <Stack.Screen name="senha" component={Senha} />
       <Stack.Screen name="regioes" component={Regioes} />
       <Stack.Screen name="regiaonorte" component={RegiaoNorte} />

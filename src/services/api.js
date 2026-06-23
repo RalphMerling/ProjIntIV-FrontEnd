@@ -2,7 +2,7 @@ import axios from "axios";
 
 //Instância do axios
 const api = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com', //Endereço central da API
+    baseURL: 'http://localhost:8081', //Endereço central da API - Faz a conexão com o Back
     timeout: 8000, //Tempo máximo de espera da response
     headers: {'Content-Type': 'aplication/json'}, //Cabeçalhos que são comuns em todas as requisições react native
 })

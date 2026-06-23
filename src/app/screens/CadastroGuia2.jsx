@@ -28,60 +28,78 @@ export default function CadastroGuia() {
 
       {/* Conteúdo */}
       <View style={styles.content}>
-        <Text style={styles.title}>Insira seus dados</Text>
+        <Text style={styles.title}>Insira mais alguns dados</Text>
 
-        <Text style={styles.label}>Nome</Text>
+        <Text style={styles.label}>Tempo de experiência</Text>
         <TextInput
-          placeholder="Digite seu nome completo"
+          placeholder="Informe quanto tempo tem ede experiência"
           placeholderTextColor="#999"
           style={styles.input}
         />
 
-        <Text style={styles.label}>Email</Text>
+        <Text style={styles.label}>Uma frase sobre você</Text>
         <TextInput
-          placeholder="Insira seu endereço de email"
+          placeholder="Escreva uma frase que seus turistas irão ver"
           placeholderTextColor="#999"
           secureTextEntry
           style={styles.input}
         />
 
-        <Text style={styles.label}>Cadastur</Text>
-        <TextInput
-          placeholder="Insira o seu Cadastur"
-          placeholderTextColor="#999"
-          secureTextEntry
-          style={styles.input}
-        />
 
-        <Text style={styles.label}>Telefone / WhatsApp</Text>
-        <TextInput
-          placeholder="(00) 00000-0000"
-          placeholderTextColor="#999"
-          secureTextEntry
-          style={styles.input}
-        />
-    
-        <Text style={styles.label}>Crie uma senha</Text>
-        <TextInput
-          placeholder="Mínimo 6 caracteres"
-          placeholderTextColor="#999"
-          secureTextEntry
-          style={styles.input}              
+        <Text style={styles.label}>Idiomas</Text>
+                <View style={styles.languageContainer}>
+       
+          <TextInput
+            placeholder="Idioma 1"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
           />
-    
-        <Text style={styles.label}>Repita a senha</Text>
-        <TextInput
-          placeholder="Mínimo 6 caracteres"
-          placeholderTextColor="#999"
-          secureTextEntry
-          style={styles.input}
-        />
+     
+          <TextInput
+            placeholder="Idioma 2"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
+          />
+        
+          <TextInput
+            placeholder="Idioma 3"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
+          />
+            {/* <View style={styles.line} /> */}
+          </View>
 
-        {/* <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Avançar</Text>
-        </TouchableOpacity> */}
+        <Text style={styles.label}>Especialidades (indique 3)</Text>
+        <View style={styles.languageContainer}>
+       
+          <TextInput
+            placeholder="Especialidade 1"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
+          />
+     
+          <TextInput
+            placeholder="Especialidade 2"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
+          />
+        
+          <TextInput
+            placeholder="Especialidade 3"
+            placeholderTextColor="#999"
+            secureTextEntry
+            style={styles.input}
+          />
+            {/* <View style={styles.line} /> */}
+          </View>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("cadastroguia2")}>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("cadastroguia3")}>
           <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
 
@@ -157,7 +175,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     textAlign: "center",
     color: "#707070",
-    marginBottom: 50,
+    marginBottom: 30,
   },
 
   label: {
@@ -165,14 +183,15 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginBottom: 8,
     fontSize: 15,
+    marginTop: 16,
   },
 
   input: {
     backgroundColor: "#FFF",
-    height: 55,
+    height: 30,
     borderRadius: 8,
     paddingHorizontal: 15,
-    marginBottom: 20,
+    marginBottom: 15,
     elevation: 3,
     shadowColor: "#000",
     shadowOpacity: 0.1,
@@ -185,7 +204,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 5,
+    marginTop: 30
+    ,
   },
 
   buttonText: {
@@ -249,4 +269,35 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 20,
   },
+
+  languageContainer: {
+  marginTop: 1,
+},
+
+languageRow: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginBottom: 5
+  ,
+},
+
+checkbox: {
+  width: 15,
+  height: 15,
+  borderWidth: 2,
+  borderColor: "#000",
+  marginRight: 15,
+},
+
+languageText: {
+  fontSize: 15,
+  color: "#0A3A66",
+},
+
+line: {
+  flex: 1,
+  height: 1,
+  backgroundColor: "#777",
+  marginLeft: 10,
+},
 });
